@@ -20,6 +20,26 @@ export default class Directors extends Component {
         })
     }
 
+    addDirector = (director) => {
+        fetch('http://localhost:9292/directors', {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify(director)
+        })
+        .then(r => r.json())
+        .then(data => {
+            console.log(data)
+            this.setState({
+                directors: [...this.state.directors, data] 
+            })
+        })
+        this.setState({
+            toggleDirectorForm: false
+        })
+    }
+
     render() {
          const director = this.state.directors.map(d =>  <DirectorLink key={d.id} dir={d} /> )
 
