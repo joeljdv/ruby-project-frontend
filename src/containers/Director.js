@@ -22,6 +22,27 @@ export default class Director extends Component {
         })
     }
 
+    addDog = (movie) => {
+        fetch(`http://localhost:9292/directors/${this.state.director.id}/movies`, {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify(movie)
+        })
+        .then(r => r.json())
+        .then(data => {
+            console.log(data)
+            this.setState({
+                ...this.state.director,
+                movies:[...this.state.director.movies, data]
+            })
+        })
+        this.setState({
+            toggleMovieForm: false
+        })
+    }
+
     render() {
 
         let movies = this.state.director.movies.map(m => <Movie key={m.id} movie={m}/>)
