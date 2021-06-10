@@ -45,9 +45,32 @@ export default class Director extends Component {
         })
     }
 
+    editMovie = (movie) => {
+
+    }
+
+    deleteMovie = (id) => {
+        fetch(`http://localhost:9292/directors/${this.state.director.id}/movies/${id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/json'
+            }
+        })
+        .then(() => {
+            newMovies = this.state.director.movies.filter(d => d.id != id)
+            this.setState({
+                director: {
+                    ...this.state.director,
+                    movies: newMovies
+                }
+            })
+        })
+    }
+
+
     render() {
 
-        let movies = this.state.director.movies.map(m => <Movie key={m.id} movie={m}/>)
+        let movies = this.state.director.movies.map(m => <Movie key={m.id} movie={m} editMovie={this.editMovie}/>)
 
         return (
             <div>
