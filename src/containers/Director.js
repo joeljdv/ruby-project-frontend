@@ -57,7 +57,7 @@ export default class Director extends Component {
             }
         })
         .then(() => {
-            newMovies = this.state.director.movies.filter(d => d.id != id)
+            const newMovies = this.state.director.movies.filter(d => d.id != id)
             this.setState({
                 director: {
                     ...this.state.director,
@@ -70,7 +70,7 @@ export default class Director extends Component {
 
     render() {
 
-        let movies = this.state.director.movies.map(m => <Movie key={m.id} movie={m} editMovie={this.editMovie}/>)
+        let movies = this.state.director.movies.map(m => <Movie key={m.id} movie={m} editMovie={this.editMovie} delete={this.deleteMovie}/>)
 
         return (
             <div>
