@@ -55,6 +55,7 @@ export default class Director extends Component {
                 {this.state.toggleMovieForm ? < AddMovieForm addMovie = {this.addMovie}/> : <button onClick={() => this.setState({toggleMovieForm: true})}>Add Movie</button>}
                 <hr/>
                 <h2>Directed Movies:</h2>
+                <hr/>
                {movies}
             </div>
         )
