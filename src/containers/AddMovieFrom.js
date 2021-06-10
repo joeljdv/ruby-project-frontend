@@ -4,7 +4,7 @@ export default class AddMovieFrom extends Component {
     render() {
         return (
             <div>
-                
+                Working
             </div>
         )
     }

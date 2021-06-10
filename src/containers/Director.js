@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import Movie from '../components/Movie'
+import AddMovieForm from './AddMovieFrom'
+
 export default class Director extends Component {
 
     state = {
         director: {
             movies: []
-        }
+        },
+        toggleMovieForm: false
     }
 
     componentDidMount() {
@@ -26,6 +29,9 @@ export default class Director extends Component {
         return (
             <div>
                 <h2>{this.state.director.name}</h2>
+                {this.state.toggleMovieForm ? < AddMovieForm /> : <button onClick={() => this.setState({toggleMovieForm: true})}>Add Movie</button>}
+                <hr/>
+                <h2>Directed Movies:</h2>
                {movies}
             </div>
         )
