@@ -8,7 +8,7 @@ const Movie = (props) => {
         <div >  
             <h4>{props.movie.name}</h4>
             <button>x</button> 
-            {toggleEditForm ? < MovieEditForm/> : <button>Edit movie</button> }
+            {toggleEditForm ? < MovieEditForm/> : <button onClick={() => {setToggleEditForm(true)}}>Edit movie</button> }
         </div>
     )
 }
