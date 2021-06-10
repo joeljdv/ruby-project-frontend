@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import Movie from '../components/Movie'
 export default class Director extends Component {
 
     state = {
@@ -21,17 +21,11 @@ export default class Director extends Component {
 
     render() {
 
-        let movies = this.state.director.movies.map(m => <p key={m.id}>{m.name}</p>)
+        let movies = this.state.director.movies.map(m => <Movie key={m.id} movie={m}/>)
 
         return (
             <div>
-                <h2>{this.state.director.name}</h2>
-                <hr/>
-                <br/>
-                <h4>Movies Directed:</h4>
-                <br/>
-                {movies}
-                <br/>
+               {movies}
             </div>
         )
     }

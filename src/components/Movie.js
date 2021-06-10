@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Movie = () => {
+const Movie = (props) => {
     return (
         <div>
             
