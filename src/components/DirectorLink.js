@@ -3,13 +3,9 @@ import {Link} from 'react-router-dom'
  const DirectorLink = (props) => {
     return (
         <div>
-            <ul>
                 <Link to={`/directors/${props.dir.id}`}>
-                     <li>
-                        {props.dir.name}
-                    </li>
+                        <h4>{props.dir.name}</h4>
                 </Link>
-            </ul>
         </div>
     )
 }
