@@ -14,7 +14,7 @@ export default class AddDirectorForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        this.props.addDirector(this.state.name)
+        this.props.addDirector(this.state)
     }
 
     render() {
