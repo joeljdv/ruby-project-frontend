@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import DirectorLink from '../components/DirectorLink'
+import AddDirectorForm from './AddDirectorForm'
 
 export default class Directors extends Component {
 
     state={
-        directors: []
+        directors: [],
+        toggleDirectorForm: false
     }
 
     componentDidMount() {
@@ -24,6 +26,9 @@ export default class Directors extends Component {
         return (
             <div>
                 <h1>Directors</h1>
+                {this.state.toggleDirectorForm ? <AddDirectorForm /> : <button onClick={() => this.setState({toggleDirectorForm: true})}>Add Director</button>}
+                <hr/>
+                <br/>
                 {director}
             </div>
         )
