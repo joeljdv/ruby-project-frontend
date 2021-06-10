@@ -22,7 +22,7 @@ export default class Director extends Component {
         })
     }
 
-    addDog = (movie) => {
+    addMovie = (movie) => {
         fetch(`http://localhost:9292/directors/${this.state.director.id}/movies`, {
             method: 'POST',
             headers: {
@@ -50,7 +50,7 @@ export default class Director extends Component {
         return (
             <div>
                 <h2>{this.state.director.name}</h2>
-                {this.state.toggleMovieForm ? < AddMovieForm addDog = {this.addDog}/> : <button onClick={() => this.setState({toggleMovieForm: true})}>Add Movie</button>}
+                {this.state.toggleMovieForm ? < AddMovieForm addMovie = {this.addMovie}/> : <button onClick={() => this.setState({toggleMovieForm: true})}>Add Movie</button>}
                 <hr/>
                 <h2>Directed Movies:</h2>
                {movies}
