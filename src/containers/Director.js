@@ -34,8 +34,10 @@ export default class Director extends Component {
         .then(data => {
             console.log(data)
             this.setState({
-                ...this.state.director,
-                movies:[...this.state.director.movies, data]
+                director: {
+                    ...this.state.director,
+                    movies:[...this.state.director.movies, data]
+                }
             })
         })
         this.setState({
