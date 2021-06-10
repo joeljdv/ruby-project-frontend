@@ -6,6 +6,15 @@ export default class MovieEditForm extends Component {
         name: ''
     }
 
+
+    componentDidMount() {
+        this.setState({
+            id: this.props.movie.id,
+            name: this.props.movie.name
+        })
+    }
+
+
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
