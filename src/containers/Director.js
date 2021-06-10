@@ -25,7 +25,7 @@ export default class Director extends Component {
 
         return (
             <div>
-                <h3>{this.state.director.name}</h3>
+                <h2>{this.state.director.name}</h2>
                 <hr/>
                 <br/>
                 <h4>Movies Directed:</h4>
