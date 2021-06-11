@@ -23,7 +23,8 @@ export default class MovieEditForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        this.props.addMovie(this.state)
+        this.props.editMovie(this.state)
+        this.props.toggle()
     }
 
     render() {
