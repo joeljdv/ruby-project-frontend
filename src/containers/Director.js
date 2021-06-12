@@ -65,10 +65,9 @@ export default class Director extends Component {
         })
     }
 
-
     render() {
 
-        let movies = this.state.director.movies.map(m => <Movie key={m.id} movie={m} deleteMovie={this.deleteMovie}/>)
+        let movies = this.state.director.movies.map(m => <Movie key={m.id} movie={m} deleteMovie={this.deleteMovie} />)
 
         return (
             <div>
